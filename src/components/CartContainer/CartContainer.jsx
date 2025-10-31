@@ -11,7 +11,7 @@ function CartContainer() {
     <section>
       <div className='section-container'>
         {/* Header */}
-        <div className='header'>
+        <div className='section-header'>
           <p className='section-title'>Carrito de compras</p>
           <span>4 productos por un total de $47.815,63</span> 
         </div>
@@ -29,7 +29,7 @@ function CartContainer() {
         </div>
 
         {/* Footer */}
-        <div className='footer'>
+        <div className='section-footer'>
           <button className='section-button' onClick={handleCheckout}>Finalizar compra</button>
         </div>
       </div>

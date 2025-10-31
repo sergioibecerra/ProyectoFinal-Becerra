@@ -1,21 +1,5 @@
-.header {
-  padding: 0 0 0.5rem 0;
-  color: var(--text-light);
-  font-weight: 600;
-  text-align: left;   /* Fuerza el texto a alinearse a la izquierda */
-}
-
 .item {
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
-}
-
-.footer {
-  padding: 0.75rem 0;
-  color: var(--text-light);
-  font-weight: 600;
-  text-align: left;
-  display: flex;
-  gap: 0.75rem;
 }

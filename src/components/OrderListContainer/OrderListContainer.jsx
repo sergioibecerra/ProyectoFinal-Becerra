@@ -3,24 +3,18 @@ import './OrderListContainer.css'
 function OrderListContainer() {
   console.log('Cargo componente: OrderListContainer'); // TODO: remove!!!
 
-  const showInitialLoadButton = true;
-
-  function handleInitialLoad() {
-    console.log('Carga inicial');
-
-  }
-
   function handleResetOrders() {
-    console.log('Resetear compras');  
+    console.log('Resetear compras');
+    // lógica para resetear las compras
   }
 
   return (
     <section>
       <div className='section-container'>
         {/* Header */}
-        <div className='header'>
+        <div className='section-header'>
           <p className='section-title'>Mis compras</p>
-          <span>85 compras por un total de $375.000,00</span> 
+          <p>85 compras por un total de $375.000,00</p>
         </div>
               
         {/* Body */}
@@ -36,8 +30,7 @@ function OrderListContainer() {
         </div>
 
         {/* Footer */}
-        <div className='footer'>
-          { showInitialLoadButton ? <button className='section-button' onClick={handleInitialLoad}>Carga inicial</button> : null}
+        <div className='section-footer'>
           <button className='section-button' onClick={handleResetOrders}>Resetear compras</button>
         </div>
       </div>
