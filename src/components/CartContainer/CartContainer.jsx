@@ -12,7 +12,7 @@ function CartContainer() {
       <div className='section-container'>
         {/* Header */}
         <div className='section-header'>
-          <p className='section-title'>Carrito de compras</p>
+          <p className='section-title'>Carrito</p>
           <span>4 productos por un total de $47.815,63</span> 
         </div>
               

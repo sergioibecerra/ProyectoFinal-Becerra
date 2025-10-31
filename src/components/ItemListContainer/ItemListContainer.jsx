@@ -8,6 +8,7 @@ function ItemListContainer(props) {
 
   const {categoryId} = useParams()
   const [loading, setLoading] = useState(true)
+  const [initializing, setInitializing] = useState(false)
   const [items, setItems] = useState([])
   const [dataMessage, setDataMessage] = useState("")
 
@@ -30,10 +31,14 @@ function ItemListContainer(props) {
     const confirmed = window.confirm('¿Confirma la carga inicial de productos a Firestore?');
     if (confirmed) {
       console.log('Exportando productos a Firestore...');
+      setInitializing(true);
       exportProducts().then(() => {
         console.log('Productos exportados con éxito');
       }).catch((error) => {
         console.error('Error al exportar productos:', error);
+      }).finally(() => {
+        setInitializing(false);
+        window.location.reload();
       });
     }
   }
@@ -55,7 +60,8 @@ function ItemListContainer(props) {
           ? 
             // Footer with initial load button
             <div className='section-footer'>
-              <button className='section-button' onClick={handleInitialLoad}>Carga inicial de productos</button>
+              <button className='section-button' disabled={initializing} onClick={handleInitialLoad}>Carga inicial de productos</button>
+              {initializing && <p>Cargando productos...</p>}
             </div>
           : items.length > 0
             ? <p>Muestro lista de productos...</p>
