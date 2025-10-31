@@ -1,0 +1,44 @@
+.navbar ul {
+  margin: 0;                                /* Quita el margen por defecto */
+  background-color: var(--bg-dark);         /* Fondo oscuro para la barra de navegación */
+  list-style: none;                         /* Quita las viñetas */
+  display: flex;                            /* Coloca los elementos en línea */
+  justify-content: center;                  /* Centra los ítems */
+  gap: 1rem;                                /* Espacio entre ellos */
+  padding: 1rem 1.25rem 1.25rem 1.25rem;    /* Espaciado interno */
+}
+
+.navbar a {
+  color: var(--text-light);
+  text-decoration: none;    /* Quita el subrayado */
+  font-weight: 500;
+  padding: 0.5rem 0.75rem 0.75rem 0.75rem;
+}
+
+.navbar a:hover {
+  color: #212121;
+  background-color: var(--bg-accent);
+  border-radius: var(--radius);  
+}
+
+.navbar-logo img {
+  height: 1000px;
+  cursor: pointer;
+}
+
+.navbar .logo {
+  height: 36px;
+  stroke: #444;
+  fill: none;
+  padding: 0px 0px;
+}
+
+.navbar-cart {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo a:hover,
+.navbar-cart a:hover {
+  background-color: transparent !important;
+}

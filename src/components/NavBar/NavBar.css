@@ -1,0 +1,70 @@
+.navbar {
+  background-color: var(--bg-dark);
+  width: 100%;
+}
+
+.navbar-container {
+  max-width: 1200px;                /* ancho límite deseado */
+  margin: 0 auto;                   /* centra el contenedor */
+  display: flex;            
+  align-items: center;              
+  justify-content: space-between;   /* espacio entre elementos */
+  padding: 1rem;                    /* padding alrededor */
+}
+
+.navbar-logo img {
+  height: 36px;
+  padding: 0.25rem 0 0 0;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;      /* espacio entre elementos */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.navbar-menu a:hover {
+  color: var(--accent-hover);
+  background-color: var(--bg-accent);
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-orders {
+  margin: 0rem 0rem 0rem -0.5rem;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.navbar-orders:hover {
+  color: var(--accent-hover);
+  background-color: var(--bg-accent);
+}
+
+.navbar-cart {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo a:hover,
+.navbar-cart a:hover {
+  background-color: transparent !important; /* Evita que logo o carrito tengan hover del menú */ 
+}

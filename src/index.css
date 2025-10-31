@@ -3,9 +3,8 @@
   line-height: 1.5;                                               /* altura de línea legible */
   font-weight: 400;                                               /* peso de fuente normal */
 
-  color-scheme: light dark;               /* habilita modos claro y oscuro según la preferencia del usuario */
-  color: rgba(255, 255, 255, 0.87);     /* color de texto para modo oscuro */
-  background-color: #242424;            /* color de fondo para modo oscuro */
+  color: #213547;               /* color de texto para modo oscuro */
+  background-color: #f6f6f7;    /* Shopify light background */
 
   font-synthesis: none;                 /* desactiva la síntesis de fuentes */  
   text-rendering: optimizeLegibility;   /* optimiza la legibilidad del texto */
@@ -15,52 +14,7 @@
 
 body {
   margin: 0;
-  display: flex;            /* convierte el <body> en un contenedor flexible */
-  justify-content: center;  /* centra horizontalmente */
-  align-items: flex-start;  /* alinea el contenido arriba */
-  min-width: 320px;         /* ancho mínimo para dispositivos pequeños */
-  min-height: 100vh;        /* altura mínima para llenar la ventana gráfica */
-}
-
-h1 {
-  font-size: 3.2em;             /* tamaño grande para el encabezado */
-  line-height: 1.1;             /* altura de línea ajustada para el encabezado */
-  background-color: aqua;  /* REMOVER */
-}
-
-p {
-  background-color: aqua;  /* REMOVER */
-}
-
-button {
-  border-radius: 8px;               /* bordes redondeados */    
-  border: 1px solid transparent;    /* borde inicial transparente */
-  padding: 0.6em 1.2em;             /* espacio interno vertical y horizontal */
-  font-size: 1em;                   /* tamaño de fuente igual al del elemento padre */
-  font-weight: 500;                 /* peso de fuente medio */
-  font-family: inherit;             /* hereda la fuente del elemento padre */
-  background-color: #1a1a1a;      /* color de fondo del botón */
-  cursor: pointer;                  /* cambia el cursor al pasar sobre el botón */
-  transition: border-color 0.25s;   /* suaviza el cambio de color del borde */
-}
-button:hover {
-  border-color: #646cff;          /* cambia el color del borde al pasar el cursor */
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;   /* estilo de enfoque accesible */
-}
-
-/* Estilos para el modo claro cuando se detecta en el sistema operativo */
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #f6f6f7; /* Shopify light background */
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #EEEEEE; /* #f9f9f9; */
-  }
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-gray);
 }

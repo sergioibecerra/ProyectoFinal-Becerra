@@ -1,11 +1,15 @@
-#root {
-  max-width: 1280px;    /* limita el ancho máximo del contenido */
-  margin: 0 auto;       /* centra el contenedor root horizontalmente */
-  padding: 1rem 1rem;        /* agrega espacio interno alrededor del contenido */
-  text-align: center;   /* centra todo el texto y elementos inline dentro del root */
-}
+:root {
+  --bg-gray: #f6f6f7;
+  --bg-white: #ffffff;
+  --bg-dark:  #E0E0E0;
+  --bg-accent: #BDBDBD;
+  --border: #dfe3e8;
+  --text-dark: #202223;
+  --text-light: #6d7175;
+  --accent: #008060;
+  --accent-hover: #006e52;
+  --radius: 6px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-.card {
-  padding: 2em;   /* agrega espacio interno alrededor del contenido de la tarjeta */
-  background-color: aqua;   /* REMOVER */
+  text-align: center;   /* centra todo el texto y elementos inline dentro del root */
 }
