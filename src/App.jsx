@@ -1,6 +1,7 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import NavBar from './components/NavBar/NavBar'
+import OrderContainer from './components/OrderContainer/OrderContainer'
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           element={<div><h2>Detalle de Ítem</h2></div>} />
         <Route 
           path='/orders' 
-          element={<div><h2>Mis compras</h2></div>} />
+          element={<OrderContainer />} />
         <Route 
           path='/cart' 
           element={<div><h2>Carrito de Compras</h2></div>} />

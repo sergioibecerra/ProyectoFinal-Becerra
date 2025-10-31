@@ -4,7 +4,6 @@ import homeLogo from '../../assets/logo.png'
 import CartWidget from '../CartWidget/CartWidget'
 
 function NavBar() {
-
   console.log('Cargo componente: NavBar'); // TODO: Eliminar debug
 
   return (

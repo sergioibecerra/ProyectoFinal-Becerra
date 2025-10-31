@@ -5,11 +5,6 @@
 
   color: #213547;               /* color de texto para modo oscuro */
   background-color: #f6f6f7;    /* Shopify light background */
-
-  font-synthesis: none;                 /* desactiva la síntesis de fuentes */  
-  text-rendering: optimizeLegibility;   /* optimiza la legibilidad del texto */
-  -webkit-font-smoothing: antialiased;  /* suaviza las fuentes en navegadores WebKit */
-  -moz-osx-font-smoothing: grayscale;   /* suaviza las fuentes en Firefox en macOS */
 }
 
 body {
@@ -17,4 +12,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--bg-gray);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-dark);
+  margin: 0.5rem 0;
+  background-color: turquoise;
 }

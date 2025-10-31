@@ -13,3 +13,9 @@
 
   text-align: center;   /* centra todo el texto y elementos inline dentro del root */
 }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
