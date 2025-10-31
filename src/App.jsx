@@ -1,7 +1,9 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import NavBar from './components/NavBar/NavBar'
-import OrderContainer from './components/OrderContainer/OrderContainer'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import OrderListContainer from './components/OrderListContainer/OrderListContainer'
+import CartContainer from './components/CartContainer/CartContainer'
 
 function App() {
   return (
@@ -9,26 +11,26 @@ function App() {
       <NavBar />
       <Routes>
         <Route 
-          path='/home'
-          element={<div><h2>Inicio</h2></div>} />
+          path='/'
+          element={<ItemListContainer greeting='Catálogo principal de productos' />} />
         <Route 
           path='/category'
-          element={<div><h2>Catálogo Principal de Productos</h2></div>} />
+          element={<ItemListContainer greeting='Productos de todas las categorías' />} />
         <Route 
           path='/category/:categoryId'
-          element={<div><h2>Productos de la Categoría</h2></div>} />
+          element={<ItemListContainer greeting='Productos de la Categoría' />} />
         <Route
           path='/detail/:itemId'
           element={<div><h2>Detalle de Ítem</h2></div>} />
         <Route 
           path='/orders' 
-          element={<OrderContainer />} />
+          element={<OrderListContainer />} />
         <Route 
           path='/cart' 
-          element={<div><h2>Carrito de Compras</h2></div>} />
+          element={<CartContainer />} />
         <Route 
           path='*' 
-          element={<div><h2>Error 404: No encontramos resultados</h2></div>} />
+          element={<div><h3>Error 404: No encontramos resultados</h3></div>} />
       </Routes>
     </BrowserRouter>
   )

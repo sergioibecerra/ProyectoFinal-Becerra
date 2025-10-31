@@ -4,6 +4,8 @@ import cartLogo from '../../assets/cart.svg'
 //import { cartContext } from '../../context/cartContext'
 
 function CartWidget(){
+  console.log('Cargo componente: CartWidget'); // TODO: remove!!!
+
   //const { cartCount } = useContext(cartContext)
   const cartCount = 0;
 

@@ -8,14 +8,45 @@
   --text-light: #6d7175;
   --accent: #008060;
   --accent-hover: #006e52;
+  --button-face: #009688;
   --radius: 6px;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
   text-align: center;   /* centra todo el texto y elementos inline dentro del root */
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+.section-container {
+  max-width: 1000px;
+  margin: 1rem auto;
+  /* border: 1px solid var(--border);  /*  */
+  /* border-radius: var(--radius);     /* */
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.section-body {
+  max-width: 1000px;
+  padding: 1rem;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);            /* Sombra suave */
+}
+
+.section-button {
+  font-weight: 600;
+  color: white;
+  background-color: var(--button-face);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.section-button:hover {
+  background-color: var(--accent-hover);
 }
