@@ -16,10 +16,10 @@
 }
 
 .section-container {
-  max-width: 1000px;
+  max-width: 1035px;
   margin: 1rem auto;
-  border: 1px solid var(--border);  /*  */
-  border-radius: var(--radius);     /* */
+  /* border: 1px solid var(--border);  /*  */
+  /* border-radius: var(--radius);     /* */
 }
 
 .section-header {
@@ -36,16 +36,15 @@
 }
 
 .section-body {
-  max-width: 1000px;
   padding: 1rem;
   background-color: var(--bg-white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);            /* Sombra suave */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);    /* Sombra suave */
 }
 
 .section-footer {
-  padding: 0.75rem 0;
+  padding: 0.75rem 0 0 0;
   color: var(--text-light);
   font-weight: 600;
   text-align: left;

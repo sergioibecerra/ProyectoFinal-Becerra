@@ -1,0 +1,23 @@
+.item-list {
+  background-color: #ffffff;                            /* Fondo blanco */
+  border: 1px solid #e5e7eb;                            /* Gris claro (#e5e7eb ≈ Tailwind gray-200) */
+  border-radius: 6px;                                    /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);            /* Sombra suave */
+  padding: 16px;                                          /* Espaciado interno */
+  /*margin: 0 1rem 1rem 0;                                           /* Espaciado externo entre items */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;  /* Animación suave */
+  max-width: 300px;
+  min-width: 300px;
+}
+
+.item-list:hover {
+  transform: translateY(-2px);                            /* Leve elevación */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);            /* Sombra más pronunciada */
+  border-color: #d1d5db;                                /* Un poco más oscuro al hover */
+}
+
+.item-list img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}

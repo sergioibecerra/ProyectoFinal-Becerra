@@ -2,6 +2,7 @@ import './ItemListContainer.css'
 import { useState, useEffect } from "react"
 import { useParams } from "react-router"
 import { getAllItems, getItemsByCategory, exportProducts } from '../../data/FirestoreService'
+import ItemList from '../ItemList/ItemList'
 
 function ItemListContainer(props) {
   console.log('Cargo componente: ItemListContainer'); // TODO: Eliminar debug
@@ -16,7 +17,7 @@ function ItemListContainer(props) {
     setLoading(true)
     if (categoryId) {
       getItemsByCategory(categoryId).
-        then((data) => setItems(data)).
+        then((data) => { setItems(data); console.log(data) }).
         catch((error) => { setItems([]); setDataMessage(error) }).
         finally(() => setLoading(false))
     } else {
@@ -57,14 +58,15 @@ function ItemListContainer(props) {
               
         {/* Body */}
         {!loading && !categoryId && items.length === 0
-          ? 
-            // Footer with initial load button
+          ? // Footer with initial load button
             <div className='section-footer'>
               <button className='section-button' disabled={initializing} onClick={handleInitialLoad}>Carga inicial de productos</button>
               {initializing && <p>Cargando productos...</p>}
             </div>
           : items.length > 0
-            ? <p>Muestro lista de productos...</p>
+            ? <div className='items-container'> 
+                {items.map(item => (<ItemList key={item.id} {...item} />))}
+              </div>
             : <p>{dataMessage}</p>
         }
       </div>
