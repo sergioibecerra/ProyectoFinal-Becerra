@@ -18,13 +18,36 @@ Instrucciones para contribuír ("No se meta!!!")
 
 1. Haz un fork del proyecto
 2. Crea una rama
-
+3. Realiza tus cambios y haz un commit
+4. Sube tu rama
+5. Abre un Pull Request
 
 
 🧩 Diferencia entre fork y clone
 Acción	Dónde se crea	Para qué sirve
 - Fork	En tu cuenta de GitHub (servidor remoto)	Copiar un repo ajeno para modificarlo o colaborar.
 - Clone	En tu computadora local	Descargar un repo remoto (tu fork o el original) para trabajar localmente.
+
+## Licencia
+
+Indica bajo que licencia se distribuye el proyecto
+
+## Características
+
+- Fácil de instalar
+- Interfaz amigable
+- Soporte multiplataforma
+
+## Capturas de pantalla
+
+![Captura del proyecto](/public/favicon.png)
+
+
+## Enlaces
+
+- [Documentación oficial](https://react.dev)
+
+
 
 
 # Consideraciones sobre las consignas del trabajo

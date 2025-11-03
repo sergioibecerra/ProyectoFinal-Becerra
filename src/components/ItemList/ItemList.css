@@ -1,10 +1,10 @@
 .item-list {
+  text-align: left;
   background-color: #ffffff;                            /* Fondo blanco */
   border: 1px solid #e5e7eb;                            /* Gris claro (#e5e7eb ≈ Tailwind gray-200) */
   border-radius: 6px;                                    /* Bordes redondeados */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);            /* Sombra suave */
   padding: 16px;                                          /* Espaciado interno */
-  /*margin: 0 1rem 1rem 0;                                           /* Espaciado externo entre items */
   transition: transform 0.2s ease, box-shadow 0.2s ease;  /* Animación suave */
   max-width: 300px;
   min-width: 300px;
@@ -21,3 +21,79 @@
   border-radius: 8px;
   object-fit: cover;
 }
+
+.item-featured {
+  display: inline-block;
+  color: var(--text-white);
+  font-size: 0.6rem;
+  font-weight: 600;
+  background-color: var(--bg-orange);
+  padding: 0.15rem 0.3rem;
+  border-radius: var(--radius);
+  margin: 0;
+}
+
+.item-title {
+  color: var(--text-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.item-base-price {
+  color: var(--text-light);
+  font-size: 1rem;
+  text-decoration: line-through;
+  margin: 0;
+}
+
+.item-price-container {
+  display: flex;
+  align-items: center;       
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.item-price {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.item-offer {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: var(--bg-accent-light);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  margin: 0;
+}
+
+.item-button-container {
+  text-align: center;
+}
+
+/*
+.item-list button {
+  display: block;
+  margin: 2rem auto 1rem;   
+  font-weight: 500;
+  color: white;
+  background-color: var(--bg-dark);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.item-list button:hover {
+  background-color: var(--text-light);
+}
+
+
+.item-list a {
+  text-decoration: none;
+}
+*/

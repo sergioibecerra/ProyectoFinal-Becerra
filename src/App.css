@@ -3,12 +3,17 @@
   --bg-white: #ffffff;
   --bg-dark:  #E0E0E0;
   --bg-accent: #BDBDBD;
+  --bg-accent-light: #00806020;  /* Accent background with transparency */
+  --bg-orange: #FF592A;
   --border: #dfe3e8;
   --text-dark: #202223;
   --text-light: #6d7175;
+  --text-white: #ffffff;
   --accent: #008060;
   --accent-hover: #006e52;
   --button-face: #009688;
+  --button-gray: #F5F5F5;
+  --button-gray-hover: #E0E0E0;
   --radius: 6px;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
@@ -54,7 +59,7 @@
 }
 
 .section-button {
-  font-weight: 600;
+  font-weight: 500;
   color: white;
   background-color: var(--button-face);
   border: none;
@@ -68,6 +73,25 @@
 }
 
 .section-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.item-button {
+  font-weight: 500;
+  color: var(--text-light);
+  background-color: var(--button-gray);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.item-button:hover {
+  background-color: var(--button-gray-hover);
+}
+
+.item-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }

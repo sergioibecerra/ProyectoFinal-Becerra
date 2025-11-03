@@ -9,15 +9,20 @@ function ItemList(props) {
 
   return (
     <div className='item-list'>
-      <h2>{props.title}</h2>
+      {props.featured ? <p className='item-featured'>MÁS VENDIDO</p> : ""}
+      <p className='item-title'>{props.title}</p>
 
-      {props.price != props.basePrice ? <p>Desde <s>${props.basePrice.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</s></p> : ""}
-      <h3>Precio: ${props.price.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</h3>
-      {props.price != props.basePrice ? <p>{Math.round((props.basePrice-props.price)/props.basePrice*100)}% off</p> : ""}
-
-      <Link to={`/detail/${props.id}`} onClick={handleDetailClick}>
-        <button>Detalles del producto</button>
-      </Link>
+      {props.price != props.basePrice ? <p className='item-base-price'>Desde ${props.basePrice.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p> : ""}
+      <div className='item-price-container'>
+        <p className='item-price'>${props.price.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+        {props.price != props.basePrice ? <p className='item-offer'>{Math.round((props.basePrice-props.price)/props.basePrice*100)}% off</p> : ""}
+      </div>
+      
+      <div className='item-button-container'>
+        <Link  to={`/detail/${props.id}`} onClick={handleDetailClick}>
+          <button className='item-button'>Detalles del producto</button>
+        </Link>
+      </div>
     </div>
   )
 }

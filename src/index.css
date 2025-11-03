@@ -17,17 +17,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-dark);
   margin: 0;
-  /*background-color: turquoise;  /* TODO: remove */
+  /* background-color: turquoise;  /* TODO: remove */
 }
 
 p, span {
   margin: 0;
-  /*background-color: turquoise;  /* TODO: remove */
-}
-
-.button2 {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
+  /* background-color: turquoise;  /* TODO: remove */
 }

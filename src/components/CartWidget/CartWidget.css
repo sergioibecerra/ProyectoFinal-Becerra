@@ -17,7 +17,7 @@
   position: absolute;
   top: -4px;
   right: -4px;
-  background: #FF592A /* red */;
+  background-color: var(--bg-orange);
   color: white;
   font-size: 0.7rem;
   padding: 2px 6px;
