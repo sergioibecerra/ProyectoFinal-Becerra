@@ -23,6 +23,7 @@ function NavBar() {
           <li><Link to='/category/cat02'>Calzado</Link></li>
           <li><Link to='/category/cat03'>Camping</Link></li>
           <li><Link to='/category/cat04'>Pesca</Link></li>
+          <li><Link to='/offers'>Ofertas</Link></li>
         </ul>
 
         {/* Cart */}

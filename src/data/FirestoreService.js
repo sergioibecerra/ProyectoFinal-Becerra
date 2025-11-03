@@ -37,6 +37,27 @@ export async function getItemsByCategory(categoryId){
   return data;
 }
 
+// Get featured products
+export async function getFeaturedItems(){
+  const productsRef = collection(db, "products");
+  const q = query(productsRef, where("featured", "==", true));
+  const querySnapshot = await getDocs(q);
+  const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  return data;
+}
+
+// Get on sale products
+export async function getOnSaleItems(){
+  const productsRef = collection(db, "products");
+  const q = query(productsRef, where("onSale", "==", true));
+  const querySnapshot = await getDocs(q);
+  const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  return data;
+}
+
+
+
+
 export function getItemById(itemId){
 
   return itemId;  //TODO: Implementar función para obtener item por Id desde Firestore

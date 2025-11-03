@@ -15,13 +15,16 @@ function App() {
         <Routes>
           <Route 
             path='/'
-            element={<ItemListContainer greeting='Todas las categorías' />} />
+            element={<ItemListContainer scope='featured' />} />
           <Route 
             path='/category'
-            element={<ItemListContainer greeting='Todas las categorías' />} />
+            element={<ItemListContainer scope='all' />} />
           <Route 
             path='/category/:categoryId'
-            element={<ItemListContainer greeting='Categoría' />} />
+            element={<ItemListContainer scope='category' />} />
+          <Route 
+            path='/offers'
+            element={<ItemListContainer scope='offers' />} />
           <Route
             path='/detail/:itemId'
             element={<div><h2>Detalle de Ítem</h2></div>} />

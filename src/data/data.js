@@ -6,10 +6,12 @@ export const items = [
     brandName: "Nike",
     price: 42769, 
     basePrice: 64999,
+    onSale: true,
     stock: 10,
     image: "/images/item-1.webp",
     categoryId: "cat01",
     categoryName: "Remeras",
+    featured: false
   },
   {
     title: "Remera Para Mujer Nike Sportswear Club Essentials Azul", 
@@ -18,10 +20,12 @@ export const items = [
     brandName: "Nike",
     price: 37664, 
     basePrice: 49999,
+    onSale: true,
     stock: 5,
     image: "/images/item-2.webp",
     categoryId: "cat01",
     categoryName: "Remeras",
+    featured: true
   },
   {
     title: "Zapatillas Para Mujer Nike Run Swift 3 Negro",
@@ -30,10 +34,12 @@ export const items = [
     brandName: "Nike",
     price: 119039,
     basePrice: 159999,
+    onSale: true,
     stock: 1,
     image: "/images/item-3.webp",
     categoryId: "cat02",
     categoryName: "Calzado",
+    featured: false
   },
   {
     title: "Ojotas Para Hombre Nike Victori One Negro 001",
@@ -42,6 +48,7 @@ export const items = [
     brandName: "Nike",
     price: 59999,
     basePrice: 59999,
+    onSale: false,
     stock: 2,
     image: "/images/item-4.webp",
     categoryId: "cat02",
@@ -54,10 +61,12 @@ export const items = [
     brandName: "Nike",
     price: 84599,
     basePrice: 99999,
+    onSale: true,
     stock: 2,
     image: "/images/item-5.webp",
     categoryId: "cat02",
     categoryName: "Calzado",
+    featured: false
   },
   {
     title: "Ojotas Para Mujer Nike Victori One Blanco 100",
@@ -66,10 +75,12 @@ export const items = [
     brandName: "Nike",
     price: 59999,
     basePrice: 59999,
+    onSale: false,
     stock: 7,
     image: "/images/item-6.webp",
     categoryId: "cat02",
-    categoryName: "Calzado"
+    categoryName: "Calzado",
+    featured: true
   },
 
 
@@ -81,10 +92,12 @@ export const items = [
     brandName: "Deuter",
     price: 48200,
     basePrice: 48200,
+    onSale: false,
     stock: 12,
     image: "/images/item-7.webp",
     categoryId: "cat03",
-    categoryName: "Camping"
+    categoryName: "Camping",
+    featured: false
   },
   {
     title: "Bolsa impermeable Deuter Light Drypack de 20 litros",
@@ -93,10 +106,12 @@ export const items = [
     brandName: "Deuter",
     price: 41300,
     basePrice: 41300,
+    onSale: false,
     stock: 2,
     image: "/images/item-8.webp",
     categoryId: "cat03",
-    categoryName: "Camping"
+    categoryName: "Camping",
+    featured: false
   },
   {
     title: "Saco de dormir Exosphere, 11 años, color Deuter regular, amarillo, ubicación con cierre derecho",
@@ -105,10 +120,12 @@ export const items = [
     brandName: "Deuter",
     price: 438500,
     basePrice: 438500,
+    onSale: false,
     stock: 4,
     image: "/images/item-9.webp",
     categoryId: "cat03",
-    categoryName: "Camping"
+    categoryName: "Camping",
+    featured: false
   },
   {
     title: "Gorra Ansilta Flexfit Stretch Trekinng Pesca Urbano",
@@ -117,10 +134,12 @@ export const items = [
     brandName: "Ansilta",
     price: 48000,
     basePrice: 48000,
+    onSale: false,
     stock: 4,
     image: "/images/item-10.webp",
     categoryId: "cat03",
-    categoryName: "Camping"
+    categoryName: "Camping",
+    featured: true
   },
   {
     title: "Bolsa Estanco Deuter Light Dry Pack 3 Trekking Urbano Viaje",
@@ -129,10 +148,12 @@ export const items = [
     brandName: "Deuter",
     price: 31500,
     basePrice: 31500,
+    onSale: false,
     stock: 20,
     image: "/images/item-11.webp",
     categoryId: "cat03",
-    categoryName: "Camping"
+    categoryName: "Camping",
+    featured: false
   },
   {
     title: "Bolsa Estanca Deuter Light Dry Pack 8 Trekking Viaje Ansilta",
@@ -141,9 +162,11 @@ export const items = [
     brandName: "Deuter",
     price: 32300,
     basePrice: 32300,
+    onSale: false,
     stock: 3,
     image: "/images/item-12.webp",
     categoryId: "cat03",
-    categoryName: "Camping"
+    categoryName: "Camping",
+    featured: false
   }
 ]
