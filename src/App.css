@@ -59,7 +59,7 @@
   background-color: var(--button-face);
   border: none;
   border-radius: var(--radius);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   cursor: pointer;
 }
 
