@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { collection, getFirestore, getDocs, query, where, addDoc } from "firebase/firestore";
+import { collection, getFirestore, getDocs, query, where, addDoc, doc, getDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { items } from "../data/data";
@@ -24,14 +24,13 @@ export async function getAllItems() {
   const productsRef = collection(db, "products");
   const querySnapshot = await getDocs(productsRef);
   const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-  console.log(data);
   return data;
 }
 
 // Get products by category
-export async function getItemsByCategory(categoryId){
+export async function getItemsByCategory(code){
   const productsRef = collection(db, "products");
-  const q = query(productsRef, where("categoryId", "==", categoryId));
+  const q = query(productsRef, where("categoryCode", "==", code));
   const querySnapshot = await getDocs(q);
   const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   return data;
@@ -55,15 +54,14 @@ export async function getOnSaleItems(){
   return data;
 }
 
-
-
-
-export function getItemById(itemId){
-
-  return itemId;  //TODO: Implementar función para obtener item por Id desde Firestore
-
+// Get product by Id
+export async function getItemById(itemId){
+  const docRef = doc(db, "products", itemId);
+  const docSnap = await getDoc(docRef);
+  return docSnap.exists() ? { id: docSnap.id, ...docSnap.data() } : null;
 }
 
+// Create order from cart
 export async function createOrder(orderData){
   const ordersRef = collection(db, "orders");
   const  docRef = await addDoc(ordersRef, orderData);
@@ -78,4 +76,14 @@ export async function exportProducts(){
     const newDoc = await addDoc(productsRef, item)
     console.log("doc creado", newDoc.id)
   }
+}
+
+// Get category by code
+export async function getCategoryByCode(code){
+  const docRef = collection(db, "categories");
+  const q = query(docRef, where("code", "==", code));
+  const querySnapshot = await getDocs(q);
+  const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  console.log(data);
+  return data.length > 0 ? data[0] : null;
 }

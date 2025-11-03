@@ -19,10 +19,10 @@ function NavBar() {
         {/* Menu */}
         <ul className="navbar-menu">
           <li><Link to='/category'>Todas las categorías</Link></li>
-          <li><Link to='/category/cat01'>Remeras</Link></li>
-          <li><Link to='/category/cat02'>Calzado</Link></li>
-          <li><Link to='/category/cat03'>Camping</Link></li>
-          <li><Link to='/category/cat04'>Pesca</Link></li>
+          <li><Link to='/category/search?categoryCode=cat01'>Remeras</Link></li>
+          <li><Link to='/category/search?categoryCode=cat02'>Calzado</Link></li>
+          <li><Link to='/category/search?categoryCode=cat03'>Camping</Link></li>
+          <li><Link to='/category/search?categoryCode=cat04'>Pesca</Link></li>
           <li><Link to='/offers'>Ofertas</Link></li>
         </ul>
 

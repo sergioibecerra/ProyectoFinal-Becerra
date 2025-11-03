@@ -1,13 +1,14 @@
 import './ItemListContainer.css'
 import { useState, useEffect } from "react"
-import { useParams } from "react-router"
-import { getFeaturedItems, getOnSaleItems, getAllItems, getItemsByCategory, exportProducts } from '../../data/FirestoreService'
+import { useSearchParams } from "react-router"
+import { getFeaturedItems, getOnSaleItems, getAllItems, getItemsByCategory, exportProducts, getCategoryByCode } from '../../data/FirestoreService'
 import ItemList from '../ItemList/ItemList'
 
 function ItemListContainer({ scope }) {
-  console.log('Cargo componente: ItemListContainer'); // TODO: Eliminar debug
+  //const { categoryId } = useParams()
+  const [searchParams] = useSearchParams();
+  const categoryCode = searchParams.get("categoryCode");
 
-  const { categoryId } = useParams()
   const [greeting, setGreeting] = useState('')
   const [loading, setLoading] = useState(true)
   const [initializing, setInitializing] = useState(false)
@@ -35,13 +36,17 @@ function ItemListContainer({ scope }) {
         catch((error) => { setItems([]); setDataMessage(error) }).
         finally(() => setLoading(false))
     } else {
-      setGreeting('[nombre de la categoría]');
-      getItemsByCategory(categoryId).
-        then((data) => { setItems(data); console.log(data) }).
+      // scope === 'category'
+      getCategoryByCode(categoryCode).
+        then((data) => { setGreeting(data ? data.name : 'Categoría no encontrada') }).
+        catch((error) => { console.error(error) })
+
+      getItemsByCategory(categoryCode).
+        then((data) => { setItems(data) }).
         catch((error) => { setItems([]); setDataMessage(error) }).
-        finally(() => setLoading(false));
+        finally(() => setLoading(false))
     }
-  }, [categoryId, scope])
+  }, [categoryCode, scope])
 
   function handleInitialLoad() {
     const confirmed = window.confirm('¿Confirma la carga inicial de productos a Firestore?');
@@ -49,7 +54,7 @@ function ItemListContainer({ scope }) {
       console.log('Exportando productos a Firestore...');
       setInitializing(true);
       exportProducts().then(() => {
-        console.log('Productos exportados con éxito');
+        console.log('Exportación finalizada');
       }).catch((error) => {
         console.error('Error al exportar productos:', error);
       }).finally(() => {

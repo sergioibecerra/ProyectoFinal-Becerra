@@ -20,7 +20,7 @@ function App() {
             path='/category'
             element={<ItemListContainer scope='all' />} />
           <Route 
-            path='/category/:categoryId'
+            path='/category/search'
             element={<ItemListContainer scope='category' />} />
           <Route 
             path='/offers'

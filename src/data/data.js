@@ -9,7 +9,7 @@ export const items = [
     onSale: true,
     stock: 10,
     image: "/images/item-1.webp",
-    categoryId: "cat01",
+    categoryCode: "cat01",
     categoryName: "Remeras",
     featured: false
   },
@@ -23,7 +23,7 @@ export const items = [
     onSale: true,
     stock: 5,
     image: "/images/item-2.webp",
-    categoryId: "cat01",
+    categoryCode: "cat01",
     categoryName: "Remeras",
     featured: true
   },
@@ -37,7 +37,7 @@ export const items = [
     onSale: true,
     stock: 1,
     image: "/images/item-3.webp",
-    categoryId: "cat02",
+    categoryCode: "cat02",
     categoryName: "Calzado",
     featured: false
   },
@@ -51,7 +51,7 @@ export const items = [
     onSale: false,
     stock: 2,
     image: "/images/item-4.webp",
-    categoryId: "cat02",
+    categoryCode: "cat02",
     categoryName: "Calzado",
   },
   {
@@ -64,7 +64,7 @@ export const items = [
     onSale: true,
     stock: 2,
     image: "/images/item-5.webp",
-    categoryId: "cat02",
+    categoryCode: "cat02",
     categoryName: "Calzado",
     featured: false
   },
@@ -78,7 +78,7 @@ export const items = [
     onSale: false,
     stock: 7,
     image: "/images/item-6.webp",
-    categoryId: "cat02",
+    categoryCode: "cat02",
     categoryName: "Calzado",
     featured: true
   },
@@ -95,7 +95,7 @@ export const items = [
     onSale: false,
     stock: 12,
     image: "/images/item-7.webp",
-    categoryId: "cat03",
+    categoryCode: "cat03",
     categoryName: "Camping",
     featured: false
   },
@@ -109,7 +109,7 @@ export const items = [
     onSale: false,
     stock: 2,
     image: "/images/item-8.webp",
-    categoryId: "cat03",
+    categoryCode: "cat03",
     categoryName: "Camping",
     featured: false
   },
@@ -123,7 +123,7 @@ export const items = [
     onSale: false,
     stock: 4,
     image: "/images/item-9.webp",
-    categoryId: "cat03",
+    categoryCode: "cat03",
     categoryName: "Camping",
     featured: false
   },
@@ -137,7 +137,7 @@ export const items = [
     onSale: false,
     stock: 4,
     image: "/images/item-10.webp",
-    categoryId: "cat03",
+    categoryCode: "cat03",
     categoryName: "Camping",
     featured: true
   },
@@ -151,7 +151,7 @@ export const items = [
     onSale: false,
     stock: 20,
     image: "/images/item-11.webp",
-    categoryId: "cat03",
+    categoryCode: "cat03",
     categoryName: "Camping",
     featured: false
   },
@@ -165,7 +165,7 @@ export const items = [
     onSale: false,
     stock: 3,
     image: "/images/item-12.webp",
-    categoryId: "cat03",
+    categoryCode: "cat03",
     categoryName: "Camping",
     featured: false
   }
