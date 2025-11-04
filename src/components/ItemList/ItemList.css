@@ -42,7 +42,7 @@
 
 .item-base-price {
   color: var(--text-light);
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: line-through;
   margin: 0;
 }
