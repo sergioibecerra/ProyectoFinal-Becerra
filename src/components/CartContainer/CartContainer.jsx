@@ -3,8 +3,11 @@ import './CartContainer.css'
 function CartContainer() {
   console.log('Cargo componente: CartContainer'); // TODO: Eliminar debug
 
-  function handleCheckout() {
+  function handleCheckout(formData) {
     console.log('Finalizar compra');
+    console.log(formData);
+
+    
   }
 
   return (

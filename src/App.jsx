@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import CartProvider  from './context/cartContext'
 import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import OrderListContainer from './components/OrderListContainer/OrderListContainer'
 import CartContainer from './components/CartContainer/CartContainer'
 
@@ -27,7 +28,7 @@ function App() {
             element={<ItemListContainer scope='offers' />} />
           <Route
             path='/detail/:itemId'
-            element={<div><h2>Detalle de Ítem</h2></div>} />
+            element={<ItemDetailContainer />} />
           <Route 
             path='/orders' 
             element={<OrderListContainer />} />

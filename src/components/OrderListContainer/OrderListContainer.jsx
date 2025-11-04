@@ -13,7 +13,7 @@ function OrderListContainer() {
       <div className='section-container'>
         {/* Header */}
         <div className='section-header'>
-          <p className='section-title'>Mis compras</p>
+          <p className='section-title'>Mis Compras</p>
           <p>85 compras por un total de $375.000,00</p>
         </div>
               

@@ -7,7 +7,7 @@ import { items } from "../data/data";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDzQnEpyS5g4yD-9WDIrjXYo_gKuYq2VwU",
+  apiKey: import.meta.env.VITE_FS_APIKEY,
   authDomain: "coderhouse-ecommerce-571d3.firebaseapp.com",
   projectId: "coderhouse-ecommerce-571d3",
   storageBucket: "coderhouse-ecommerce-571d3.firebasestorage.app",
