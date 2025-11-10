@@ -2,7 +2,7 @@ import './ItemList.css'
 import { Link } from "react-router"
 
 function ItemList(props) {
-  
+  // Guarda la posición actual del scroll antes de navegar
   const handleDetailClick = () => {
     sessionStorage.setItem('scrollPosition', window.scrollY.toString())
   }

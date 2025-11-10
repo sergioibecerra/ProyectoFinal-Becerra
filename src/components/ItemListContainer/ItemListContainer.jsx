@@ -48,6 +48,21 @@ function ItemListContainer({ scope }) {
     }
   }, [categoryCode, scope])
 
+  // Restaura la posición del scroll después de cargar los items
+  useEffect(() => {
+    if (!loading && items.length > 0) {
+      const savedScrollPosition = sessionStorage.getItem('scrollPosition')
+      if (savedScrollPosition) {
+        // Usa setTimeout para asegurar que el DOM esté renderizado
+        setTimeout(() => {
+          window.scrollTo(0, parseInt(savedScrollPosition))
+          // Limpia la posición guardada después de usarla
+          sessionStorage.removeItem('scrollPosition')
+        }, 100)
+      }
+    }
+  }, [loading, items])
+
   function handleInitialLoad() {
     const confirmed = window.confirm('¿Confirma la carga inicial de productos a Firestore?');
     if (confirmed) {

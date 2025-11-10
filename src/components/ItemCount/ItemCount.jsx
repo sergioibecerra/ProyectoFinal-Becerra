@@ -1,19 +1,14 @@
 import './ItemCount.css'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { cartContext } from '../../context/cartContext'
 
-function ItemCount({available}) {
-  const [maxCount] = useState(available)
-  const { itemCounter, setItemCounter } = useContext(cartContext)
-  //const { addToCart } = useContext(cartContext)
+function ItemCount({item}) {
+  const [maxCount] = useState(item.stock)
+  const [itemCounter, setItemCounter] = useState(1)
+  const { addToCart } = useContext(cartContext)
   
-  useEffect(() => {
-    setItemCounter(1)
-  }, [setItemCounter])  // esto hay que ponerlo asi por que cuando cambio el itemCounte se ejecuta actualizar este componente por que esta dentro del alcance
-  // del CartProvider que cuando cambia un valor, se reejecuta todo (como va a ser el valor del cart de pedidos)
-
   const handleAddToCart = () => {
-    //addToCart(item)
+    addToCart(item, itemCounter)
   }
 
   return (

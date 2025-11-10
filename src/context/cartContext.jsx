@@ -3,19 +3,15 @@ import { createContext, useState } from 'react'
 export const cartContext = createContext() // No es un componente por lo que inicia en minúscula, CartProvider sí lo es
 
 const CartProvider = ({children}) => {
-  const [itemCounter, setItemCounter] = useState(1)
   const [cartCount, setCartCount] = useState(0)
   const [cartList, setCartList] = useState([])
     
   // Hay que copiar el arreglo, modificarlo y luego usar el setCartList para actualizar el estado
-  const addToCart = (item) => {
+  const addToCart = (item, itemCounter) => {
     // usar alternativamente structurdClone(arrayACopiar) para clonar arreglos u objetos complejos
     // alternativa: const newCartList = JSON.parse(JSON.stringify(cartList))
     setCartList(prevCartList => [...prevCartList, {...item, quantity: itemCounter}])  // Hace lo mismo que un newCartList.push({...item, quantity: itemCounter})
     setCartCount(prevCount => prevCount + itemCounter)
-
-    console.log("Adding to cart:", item, itemCounter)
-    console.log("cartCount:", cartCount)
   }
 
   const removeFromCart = (itemId) => {
@@ -47,7 +43,7 @@ const CartProvider = ({children}) => {
   // }
 
   return (
-    <cartContext.Provider value={{itemCounter, setItemCounter, cartCount, setCartCount, cartList, addToCart, removeFromCart, clearCart, countItemsInCart}}>
+    <cartContext.Provider value={{cartCount, setCartCount, cartList, addToCart, removeFromCart, clearCart, countItemsInCart}}>
       {children}
     </cartContext.Provider>
   )

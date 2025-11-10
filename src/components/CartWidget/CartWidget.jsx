@@ -1,13 +1,10 @@
 import './CartWidget.css'
 import cartLogo from '../../assets/cart.svg'
-//import { useContext } from 'react'
-//import { cartContext } from '../../context/cartContext'
+import { useContext } from 'react'
+import { cartContext } from '../../context/cartContext'
 
 function CartWidget(){
-  console.log('Cargo componente: CartWidget'); // TODO: remove!!!
-
-  //const { cartCount } = useContext(cartContext)
-  const cartCount = 0;
+  const { cartCount } = useContext(cartContext)
 
   return (
     <div className='cart-widget'>

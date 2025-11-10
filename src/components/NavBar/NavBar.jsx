@@ -4,8 +4,6 @@ import homeLogo from '../../assets/logo.png'
 import CartWidget from '../CartWidget/CartWidget'
 
 function NavBar() {
-  console.log('Cargo componente: NavBar'); // TODO: remove!!!
-
   return (
     <nav className='navbar'>
       <div className="navbar-container">

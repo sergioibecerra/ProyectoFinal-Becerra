@@ -4,7 +4,7 @@
   align-items: center;      /* Alinear los elementos verticalmente */
   flex-wrap: nowrap;        /* Todos los elementos permanecen en la misma línea */
   gap: 0.5rem;              /* Espacio entre los elementos */
-  margin: 1rem;             /* Margen alrededor del contenedor */
+  margin-bottom: 2rem;
 }
 
 .counter {
@@ -26,7 +26,7 @@
   font-size: 1.5rem;
   font-weight: 300;
   color: var(--bg-orange);
-  background-color: var(--button-gray);
+  background-color: var(--bg-whitey);
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
