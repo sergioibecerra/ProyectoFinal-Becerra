@@ -8,11 +8,11 @@ import { items } from "../data/data";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FS_APIKEY,
-  authDomain: "coderhouse-ecommerce-571d3.firebaseapp.com",
-  projectId: "coderhouse-ecommerce-571d3",
-  storageBucket: "coderhouse-ecommerce-571d3.firebasestorage.app",
-  messagingSenderId: "461922567631",
-  appId: "1:461922567631:web:5f47f2c78ad5fde40afeba"
+  authDomain: import.meta.env.VITE_FS_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_FS_PROJECTID,
+  storageBucket: import.meta.env.VITE_FS_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_FS_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FS_APP_ID
 };
 
 // Initialize Firebase

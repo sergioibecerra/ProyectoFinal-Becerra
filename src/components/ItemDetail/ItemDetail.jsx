@@ -1,11 +1,8 @@
 import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
 
 function ItemDetail({ item }) {
   //const { addToCart } = useContext(cartContext)
-
-  const handleAddToCart = () => {
-    //addToCart(item)
-  }
 
   return (
     <div className='item-detail'>
@@ -21,7 +18,7 @@ function ItemDetail({ item }) {
       </h3>     
       <p>Cantidad disponible: {item.stock}</p>     
       {/*<ItemCount available={item.stock} />*/}
-      <button onClick={handleAddToCart}>Agregar al Carrito</button>
+      <ItemCount available={item.stock} />
     </div>
   )
 }

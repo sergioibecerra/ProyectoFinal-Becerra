@@ -1,0 +1,57 @@
+.item-count {
+  display: flex;            /* Alinear y distribuir elementos en forma flexible */
+  justify-content: center;  /* Centrar los elementos horizontalmente */
+  align-items: center;      /* Alinear los elementos verticalmente */
+  flex-wrap: nowrap;        /* Todos los elementos permanecen en la misma línea */
+  gap: 0.5rem;              /* Espacio entre los elementos */
+  margin: 1rem;             /* Margen alrededor del contenedor */
+}
+
+.counter {
+  color: var(--text-light);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  padding: 0.2rem;
+  border: var(--bg-orange) 1px solid;
+  border-radius: var(--radius);
+}
+
+.counter button {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--bg-orange);
+  background-color: var(--button-gray);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.counter button:hover {
+  background-color: var(--button-gray-hover);
+}
+
+.counter button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.add-to-cart-button {
+  height: 2.5rem;
+  font-weight: 500;
+  padding: 0 0.75rem;
+  color: white;
+  background-color: var(--bg-orange);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+  background-color: var(--bg-orange-hover);
+}
