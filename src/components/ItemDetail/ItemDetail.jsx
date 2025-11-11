@@ -1,7 +1,12 @@
 import './ItemDetail.css'
+import { cartContext }  from '../../context/cartContext'
+import { useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount'
 
 function ItemDetail({ item }) {
+  const { quantityInCart } = useContext(cartContext)
+  const available = item.stock - quantityInCart(item.id)
+
   return (
     <div className='item-detail'>
       <img src={item.image} alt={item.title} />
@@ -19,7 +24,7 @@ function ItemDetail({ item }) {
           {item.price != item.basePrice ? <p className='item-offer'>{Math.round((item.basePrice-item.price)/item.basePrice*100)}% off</p> : ""}
         </div>
 
-        <p style={{fontSize: '0.875rem', marginTop: '-1rem'}}>Cantidad disponible: {item.stock}</p>
+        <p style={{fontSize: '0.875rem', marginTop: '-1rem'}}>Cantidad disponible: {available}</p>
       </div>    
     
       <ItemCount item={item} />

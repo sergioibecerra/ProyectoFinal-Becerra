@@ -55,3 +55,8 @@
 .add-to-cart-button:hover {
   background-color: var(--bg-orange-hover);
 }
+
+.add-to-cart-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
