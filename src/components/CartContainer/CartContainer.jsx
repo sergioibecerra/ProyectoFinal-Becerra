@@ -1,5 +1,5 @@
 import './CartContainer.css'
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { cartContext }  from '../../context/cartContext'
 import CartItem from '../CartItem/CartItem'
 
@@ -50,5 +50,3 @@ function CartContainer() {
 }
 
 export default CartContainer
-
-/*cart.reduce((total, item) => total + item.price * item.quantity, 0)*/
