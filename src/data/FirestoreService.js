@@ -84,6 +84,5 @@ export async function getCategoryByCode(code){
   const q = query(docRef, where("code", "==", code));
   const querySnapshot = await getDocs(q);
   const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-  console.log(data);
   return data.length > 0 ? data[0] : null;
 }

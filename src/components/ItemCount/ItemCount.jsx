@@ -1,6 +1,6 @@
 import './ItemCount.css'
 import { useState, useContext } from 'react'
-import { cartContext } from '../../context/cartContext'
+import { cartContext }  from '../../context/cartContext'
 
 function ItemCount({item}) {
   const [maxCount] = useState(item.stock)

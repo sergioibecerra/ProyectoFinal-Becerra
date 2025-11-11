@@ -5,7 +5,6 @@ import { getFeaturedItems, getOnSaleItems, getAllItems, getItemsByCategory, expo
 import ItemList from '../ItemList/ItemList'
 
 function ItemListContainer({ scope }) {
-  //const { categoryId } = useParams()
   const [searchParams] = useSearchParams();
   const categoryCode = searchParams.get("categoryCode");
 
