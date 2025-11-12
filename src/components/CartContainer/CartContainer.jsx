@@ -8,6 +8,7 @@ import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
 function CartContainer() {
   const { cart, clearCart, cartCount, totalAmountInCart } = useContext(cartContext);
+  const [completingPurchase, setCompletingPurchase] = useState(false);
   const [orderCreated, setOrderCreated] = useState(false);
 
   function handleClearCart() {
@@ -18,10 +19,11 @@ function CartContainer() {
   }
 
   function handleCompletePurchase() {
-    // Aquí podríamos mostrar el formulario de checkout
-    console.log("Iniciar proceso de compra")
+    setCompletingPurchase(true)
+  }
 
-
+    function handleCancelPurchase() {
+    setCompletingPurchase(false)
   }
 
   async function handleCheckout(formData) {
@@ -64,17 +66,16 @@ function CartContainer() {
         </div>
 
         {/* Footer */}
-        {cartCount > 0 
-          ? <div className='section-footer'>
-              <button className='section-button' onClick={handleCompletePurchase}>Finalizar compra</button>
-              <button className='section-button' onClick={handleClearCart}>Vaciar carrito</button>
-            </div>
-          : ""
-        }
+        {cartCount > 0 && !completingPurchase && (
+          <div className='section-footer'>
+            <button className='section-button' onClick={handleCompletePurchase}>Finalizar compra</button>
+            <button className='section-button' onClick={handleClearCart}>Vaciar carrito</button>
+          </div>
+        )}
 
         {/* Checkout Form */}
-        {cartCount > 0 && !orderCreated && (
-          <CheckoutForm onSubmit={handleCheckout} />
+        {cartCount > 0 && completingPurchase && (
+          <CheckoutForm onSubmit={handleCheckout} onCancel={handleCancelPurchase} />
         )}
 
       </div>

@@ -1,27 +1,37 @@
+import './CheckoutForm.css'
 import { useState } from 'react'
 
 export default function CheckoutForm(props) {
-  // Usamos este objeto de estado para controlar los datos ingresados en el formulario
-  // cada vez que se cambie un dato en el formulario, vamos a estar cambiando el estado formData, por el onChange
+  const [processing, setProcessing] = useState(false);
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     phone: '',
-    address: ''
+    address1: '',
+    address2: ''
   });
+
+  function handleSubmit(event) {
+    event.preventDefault()  /* Evita que el formulario se envíe y recargue la página */
+    const confirmed = window.confirm('¿Confirma y envía la orden de compra?');
+    if (confirmed) {
+      setProcessing(true)
+      props.onSubmit(formData)
+    }
+  }
+
+  function cancelForm() {
+    props.onCancel()
+  }
 
   function clearForm() {
     setFormData({
       username: '',
       email: '',
       phone: '',
-      address: ''
+      address1: '',
+      address2: ''
     })
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault()      /* Evita que el formulario se envíe y recargue la página */
-    props.onSubmit(formData)
   }
 
   function handleChange(event) {
@@ -35,24 +45,27 @@ export default function CheckoutForm(props) {
   return (
     <section>
       <form onSubmit={handleSubmit}>
-        <h4>Ingresa tus datos personales</h4>
         <div className='checkout-form'>
-          <label>Nombre:
-            <input name='username' type='text' placeholder='nombre' required onChange={handleChange} value={formData.username} />
-          </label>
-          <label>Email:
-            <input name='email' type='email' placeholder='email@email' required onChange={handleChange} value={formData.email} />
-          </label>
-          <label>Teléfono:
-            <input name='phone' type='tel' placeholder='5493151234567' required onChange={handleChange} value={formData.phone} />
-          </label>
-          <label>Dirección:
-            <input name='address' type='text' placeholder='dirección' required onChange={handleChange} value={formData.address} />
-          </label>
+          <label htmlFor='username'>Nombre:</label>
+          <input id='username' name='username' type='text' placeholder='nombre' required onChange={handleChange} value={formData.username} />
+
+          <label htmlFor='email'>Email:</label>
+          <input id='email' name='email' type='email' placeholder='email@email' required onChange={handleChange} value={formData.email} />
+
+          <label htmlFor='phone'>Teléfono:</label>
+          <input id='phone' name='phone' type='tel' placeholder='03511234567' required onChange={handleChange} value={formData.phone} />
+
+          <label htmlFor='address1'>Dirección 1:</label>
+          <input id='address1' name='address1' type='text' placeholder='calle, número de puerta, unidad, complejo' required onChange={handleChange} value={formData.address1} />
+
+          <label htmlFor='address2'>Dirección 2:</label>
+          <input id='address2' name='address2' type='text' placeholder='cp, localidad, provincia, país' required onChange={handleChange} value={formData.address2} />
         </div>
-        <button type="submit">Confirmar</button>
-        <button type="button">Cancelar u otra cualquier cosa</button>
-        <button type="button" onClick={clearForm}>Limpiar formulario</button>
+        <div className='section-footer'>
+          <button type="submit" className='section-button' disabled={processing}>Confirmar compra</button>
+          <button type="button" className='section-button' onClick={cancelForm} disabled={processing}>Cancelar</button>
+          <button type="button" className='section-button' onClick={clearForm} disabled={processing}>Limpiar formulario</button>
+        </div>
       </form>
     </section>
   )
