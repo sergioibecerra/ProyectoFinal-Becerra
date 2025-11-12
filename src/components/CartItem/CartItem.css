@@ -28,7 +28,7 @@
   color: var(--text-dark);
 }
 
-.cart-item .price {
+.cart-item .total {
   font-size: 1.25rem;
   font-weight: 400;
   color: var(--text-dark);

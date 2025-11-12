@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 export default function CheckoutForm(props) {
+  // Usamos este objeto de estado para controlar los datos ingresados en el formulario
+  // cada vez que se cambie un dato en el formulario, vamos a estar cambiando el estado formData, por el onChange
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -8,50 +10,49 @@ export default function CheckoutForm(props) {
     address: ''
   });
 
+  function clearForm() {
+    setFormData({
+      username: '',
+      email: '',
+      phone: '',
+      address: ''
+    })
+  }
+
   function handleSubmit(event) {
-    // cada vez que se cambie un dato en el formulario, vamos a estar cambiando el estado formData
-    console.log(event)
-    event.preventDefault()
-    props.handleCheckout(formData)
+    event.preventDefault()      /* Evita que el formulario se envíe y recargue la página */
+    props.onSubmit(formData)
   }
 
   function handleChange(event) {
-    console.log(event.target)
-    const inputName= event.target.name;
-    const inputValue= event.target.value;
-
-    //const newFormData = {...formData, [inputName]: inputValue};
-    const newFormData = {...formData}
+    const inputName= event.target.name
+    const inputValue= event.target.value
+    const newFormData = {...formData}     /* Alternativa: const newFormData = {...formData, [inputName]: inputValue}; */
     newFormData[inputName] = inputValue
     setFormData(newFormData);
   }
-
 
   return (
     <section>
       <form onSubmit={handleSubmit}>
         <h4>Ingresa tus datos personales</h4>
         <div className='checkout-form'>
-          <label>
-            Nombre:
-            <input value={formData.username} onChange={handleChange} name='username' type="text" placeholder="nombre" required />
+          <label>Nombre:
+            <input name='username' type='text' placeholder='nombre' required onChange={handleChange} value={formData.username} />
           </label>
-          <label>
-            Email:
-            <input value={formData.email} onChange={handleChange} name="email" type="email" placeholder="email@email" required />
+          <label>Email:
+            <input name='email' type='email' placeholder='email@email' required onChange={handleChange} value={formData.email} />
           </label>
-          <label>
-            Teléfono:
-            <input value={formData.phone} onChange={handleChange} name="phone" type="tel" placeholder="545315671234" required />
+          <label>Teléfono:
+            <input name='phone' type='tel' placeholder='5493151234567' required onChange={handleChange} value={formData.phone} />
           </label>
-          <label>
-            Dirección:
-            <input value={formData.address} onChange={handleChange} name="address" type="text" placeholder="dirección" required />
+          <label>Dirección:
+            <input name='address' type='text' placeholder='dirección' required onChange={handleChange} value={formData.address} />
           </label>
         </div>
         <button type="submit">Confirmar</button>
         <button type="button">Cancelar u otra cualquier cosa</button>
-        <button type="reset">Limpiar formulario</button>
+        <button type="button" onClick={clearForm}>Limpiar formulario</button>
       </form>
     </section>
   )

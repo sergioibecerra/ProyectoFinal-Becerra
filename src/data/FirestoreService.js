@@ -62,10 +62,11 @@ export async function getItemById(itemId){
 }
 
 // Create order from cart
-export async function createOrder(orderData){
-  const ordersRef = collection(db, "orders");
-  const  docRef = await addDoc(ordersRef, orderData);
-  return docRef.id;
+export async function createBuyOrder(orderData) {
+  const ordersRef = collection(db, "orders")
+  const newDoc = await addDoc(ordersRef, orderData)
+  return newDoc;
+  //return docRef.id;
 }
 
 // Initial load of products

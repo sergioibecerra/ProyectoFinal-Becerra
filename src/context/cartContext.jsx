@@ -4,14 +4,15 @@ export const cartContext = createContext() // No es un componente por lo que ini
 
 const CartProvider = ({children}) => {
   const [cartCount, setCartCount] = useState(0)
-  const [cart, setcart] = useState([])
+  const [cart, setCart] = useState([])
     
   const addToCart = (item, itemCounter) => {
     const index = cart.findIndex(cartItem => cartItem.id === item.id)
     if (index !== -1) {
       cart[index].quantity += itemCounter
+      cart[index].total += item.price * itemCounter
     } else {
-      setcart(prevcart => [...prevcart, {...item, quantity: itemCounter}])
+      setCart(prevcart => [...prevcart, {...item, quantity: itemCounter, total: item.price * itemCounter}])
     }
     setCartCount(prevCount => prevCount + itemCounter)
   }
@@ -19,7 +20,7 @@ const CartProvider = ({children}) => {
   const removeFromCart = (itemId) => {
     const index = cart.findIndex(cartItem => cartItem.id === itemId)
     if (index !== -1) {
-      setcart(prevcart => {
+      setCart(prevcart => {
         const newcart = [...prevcart]
         newcart.splice(index, 1)
         return newcart
@@ -29,7 +30,7 @@ const CartProvider = ({children}) => {
   }
 
   const clearCart = () => {
-    setcart([])
+    setCart([])
     setCartCount(0)
   }
 

@@ -14,7 +14,7 @@ function CartItem(cartItem) {
       <img width="50" src={cartItem.image} alt={cartItem.title} />
       <p className='title'>{cartItem.title}</p>
       <p className='quantity'>{cartItem.quantity} unid.</p>
-      <p className='price'>${cartItem.price.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+      <p className='total'>${cartItem.total.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
       <button className='item-button' onClick={handleRemoveFromCart}>Eliminar</button>
     </div>
   )

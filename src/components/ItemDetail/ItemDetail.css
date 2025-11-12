@@ -14,14 +14,32 @@
   object-fit: cover;  /* hace que la imagen llene sin deformarse */
 }
 
-.item-title {
+.item-detail .body {
+  text-align: left;
+  padding: 1rem;
+}
+
+.item-detail .title {
   color: var(--text-dark);
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
-.item-detail-body {
-  text-align: left;
-  padding: 1rem;
+.item-detail .price-container {
+  display: flex;
+  align-items: center;       
+  gap: 0.5rem;
+}
+
+.item-detail .out-of-stock {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-white);
+  background-color: var(--text-light);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius);
+  margin-top: 0.5rem;
+  margin-bottom: 0.85rem;
 }

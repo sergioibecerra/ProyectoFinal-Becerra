@@ -1,21 +1,48 @@
 import './CartContainer.css'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { cartContext }  from '../../context/cartContext'
+import { createBuyOrder } from '../../data/FirestoreService'
+
 import CartItem from '../CartItem/CartItem'
+import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
 function CartContainer() {
   const { cart, clearCart, cartCount, totalAmountInCart } = useContext(cartContext);
-
-  function handleCheckout(formData) {
-    console.log('Finalizar compra');
-    console.log(formData);
-  }
+  const [orderCreated, setOrderCreated] = useState(false);
 
   function handleClearCart() {
     const confirmed = window.confirm('¿Confirma que vacía el carrito?');
     if (confirmed) {
       clearCart();
     }
+  }
+
+  function handleCompletePurchase() {
+    // Aquí podríamos mostrar el formulario de checkout
+    console.log("Iniciar proceso de compra")
+
+
+  }
+
+  async function handleCheckout(formData) {
+    const orderData = {
+      buyer: formData,
+      items: cart,
+      quantity: cartCount,
+      total: totalAmountInCart(),
+      date: new Date()
+    }
+    
+    const response = await createBuyOrder(orderData)
+    setOrderCreated(response.id)
+    clearCart()
+  }
+
+  if(orderCreated){
+    return <section>
+      <h2>Gracias por su compra!</h2>
+      <p>Este es el ID de la orden de compra: #{orderCreated}</p>
+    </section>
   }
 
   return (
@@ -39,11 +66,17 @@ function CartContainer() {
         {/* Footer */}
         {cartCount > 0 
           ? <div className='section-footer'>
-              <button className='section-button' onClick={handleCheckout}>Finalizar compra</button>
+              <button className='section-button' onClick={handleCompletePurchase}>Finalizar compra</button>
               <button className='section-button' onClick={handleClearCart}>Vaciar carrito</button>
             </div>
           : ""
         }
+
+        {/* Checkout Form */}
+        {cartCount > 0 && !orderCreated && (
+          <CheckoutForm onSubmit={handleCheckout} />
+        )}
+
       </div>
     </section>
   )
