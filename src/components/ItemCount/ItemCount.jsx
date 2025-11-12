@@ -12,17 +12,17 @@ function ItemCount({item}) {
     addToCart(item, itemCounter)
     const newMaxCount = maxCount - itemCounter
     setMaxCount(newMaxCount)
-    newMaxCount > 0 ? setItemCounter(1) : setItemCounter(0)
+    setItemCounter(1)
   }
 
   return (
     <div className='item-count'>
       <div className='counter'>
-        <button onClick={() => setItemCounter(itemCounter - 1)} disabled={itemCounter <= 1}>-</button>
+        <button onClick={() => setItemCounter(itemCounter - 1)} disabled={itemCounter === 1}>-</button>
         <p style={{width: '1.5rem'}}>{itemCounter}</p>
-        <button onClick={() => setItemCounter(itemCounter + 1)} disabled={itemCounter >= maxCount}>+</button>
+        <button onClick={() => setItemCounter(itemCounter + 1)} disabled={itemCounter === maxCount}>+</button>
       </div>
-      <button className='add-to-cart-button' onClick={handleAddToCart} disabled={maxCount === 0}>Agregar al Carrito</button>
+      <button className='add-to-cart-button' onClick={handleAddToCart}>Agregar al Carrito</button>
     </div>
   )
 }

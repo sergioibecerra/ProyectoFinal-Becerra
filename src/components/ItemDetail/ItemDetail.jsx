@@ -16,7 +16,7 @@ function ItemDetail({ item }) {
         <p>{item.description}</p>
         <p>Categoría: {item.categoryName}</p>
         <p>Marca: {item.brandName}</p>
-        <p style={{marginBottom: '1rem'}}>SKU: {item.sku}</p>
+        <p style={{marginBottom: '0.5rem'}}>SKU: {item.sku}</p>
 
         {item.price != item.basePrice ? <p className='item-base-price'>Desde ${item.basePrice.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p> : ""}
         <div className='item-price-container'>
@@ -24,10 +24,10 @@ function ItemDetail({ item }) {
           {item.price != item.basePrice ? <p className='item-offer'>{Math.round((item.basePrice-item.price)/item.basePrice*100)}% off</p> : ""}
         </div>
 
-        <p style={{fontSize: '0.875rem', marginTop: '-1rem'}}>Cantidad disponible: {available}</p>
-      </div>    
-    
-      <ItemCount item={item} />
+        <p style={{fontSize: '0.8rem', marginTop: '-1rem', marginBottom: '1rem'}}>Cantidad disponible: {available}</p>
+      </div>
+
+      {available > 0 ? <ItemCount item={item} /> : ""}
     </div>
   )
 }

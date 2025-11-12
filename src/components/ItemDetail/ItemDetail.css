@@ -1,6 +1,7 @@
 .item-detail {
   width: 100%;
   height: 100%;
+  font-size: 0.8rem;
   background-color: var(--bg-white);
   border-radius: var(--radius);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);  /* Sombra suave */
@@ -11,6 +12,13 @@
   width: 100%;        /* Ocupa todo el ancho del contenedor */
   height: 100%;       /* Ocupa todo el alto del contenedor */
   object-fit: cover;  /* hace que la imagen llene sin deformarse */
+}
+
+.item-title {
+  color: var(--text-dark);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .item-detail-body {
