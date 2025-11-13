@@ -5,12 +5,21 @@
   border-radius: var(--radius);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);    /* Sombra suave */
   margin-top: 1rem;
+}
 
-  /* NUEVO: estructura en dos columnas */
-  display: grid;
+.checkout-form .title {
+  color: var(--bg-orange);
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+.checkout-form .entry-pane {
+  display: grid;                      /* usa grid layout */
   grid-template-columns: 100px 1fr;   /* primera columna para labels, segunda para inputs */
   gap: 0.75rem 1rem;                  /* espacio entre filas y columnas */
   align-items: center;                /* centra verticalmente inputs y labels */
+  padding: 1rem 0;
 }
 
 .checkout-form label {

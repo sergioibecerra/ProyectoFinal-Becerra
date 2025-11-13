@@ -1,0 +1,27 @@
+.order-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;                            /* Centra verticalmente los elementos */
+  text-align: left;
+  background-color: #ffffff;                    /* Fondo blanco */
+  border: 1px solid #e5e7eb;                    /* Gris claro (#e5e7eb ≈ Tailwind gray-200) */
+  border-radius: 6px;                             /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);    /* Sombra suave */
+  padding: 16px;                                  /* Espaciado interno */
+  margin-bottom: 0.1rem;                          /* Espacio entre items */
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+.order-list .number {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.order-list .total {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-dark);
+}

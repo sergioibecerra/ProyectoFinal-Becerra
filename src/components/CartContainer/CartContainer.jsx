@@ -2,7 +2,6 @@ import './CartContainer.css'
 import { useContext, useState } from "react";
 import { cartContext }  from '../../context/cartContext'
 import { createBuyOrder } from '../../data/FirestoreService'
-
 import CartItem from '../CartItem/CartItem'
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
 
@@ -61,9 +60,7 @@ function CartContainer() {
         </div>
 
         {/* Body */}
-        <div>
-          {cart.map(item => (<CartItem key={item.id} {...item} />))}
-        </div>
+        {cart.map(item => (<CartItem key={item.id} {...item} />))}
 
         {/* Footer */}
         {cartCount > 0 && !completingPurchase && (
