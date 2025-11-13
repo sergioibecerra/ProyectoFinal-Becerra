@@ -1,6 +1,6 @@
 .items-container {
   display: flex;
-  justify-content: left; /* Centrar los items */
-  flex-wrap: wrap;       /* Permitir que los items se envuelvan */
+  justify-content: left;  /* Alinear los items a la izquierda */
+  flex-wrap: wrap;        /* Permitir que los items se envuelvan */
   gap: 1rem;
 }

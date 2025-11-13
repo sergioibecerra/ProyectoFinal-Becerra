@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 
-export const cartContext = createContext() // No es un componente por lo que inicia en minúscula, CartProvider sí lo es
+export const cartContext = createContext()
 
 const CartProvider = ({children}) => {
   const [cartCount, setCartCount] = useState(0)

@@ -1,7 +1,7 @@
-# tiendamia.com
+# tiendatuya.com
 
 ![Captura del proyecto](/public/favicon.png)
-<b>tiendamia.com</b> es una plataforma de e-commerce para implementación de tiendas en línea para pequeños comercios que necesitan sumar un canal digital a su punto de venta físico o tradicional.
+<b>tiendatuya.com</b> es una plataforma de e-commerce para implementación de tiendas en línea para pequeños comercios que necesitan sumar un canal digital a su punto de venta físico o tradicional.
 
 ## Licencia
 Freemium y compras dentro de la aplicación.<br>
