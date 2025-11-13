@@ -17,19 +17,19 @@ function ItemListContainer({ scope }) {
   useEffect(() => {
     setLoading(true)
     if (scope === 'featured') {
-      setGreeting('Productos Destacados');
+      setGreeting('Productos destacados');
       getFeaturedItems().
         then((data) => setItems(data)).
         catch((error) => { setItems([]); setDataMessage(error) }).
         finally(() => setLoading(false));
     } else if (scope === 'offers') {
-      setGreeting('Productos en Oferta');
+      setGreeting('Productos en oferta');
       getOnSaleItems().
         then((data) => setItems(data)).
         catch((error) => { setItems([]); setDataMessage(error) }).
         finally(() => setLoading(false))
     } else if (scope === 'all') {
-      setGreeting('Todas las Categorías');
+      setGreeting('Todas las categorías');
       getAllItems().
         then((data) => setItems(data)).
         catch((error) => { setItems([]); setDataMessage(error) }).

@@ -22,19 +22,14 @@ function ItemDetailContainer() {
     <section className='item-detail-container'>
       {/* Header */}
       <div className='section-header'>
-        <p className='section-title'>Detalles de producto</p>
+        <p className='section-title'>Detalles de Producto</p>
         {loading 
           ? <p>Cargando...</p> 
-          : ""
+          : <p>{dataMessage}</p>
         }
       </div>
 
-      {loading
-        ? <p>Cargando...</p>
-        : item
-          ? <ItemDetail item={item} />
-          : <p>{dataMessage}</p>
-      } 
+      {item && <ItemDetail item={item} />} 
     </section>
   )
 }

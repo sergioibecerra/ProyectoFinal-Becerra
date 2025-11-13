@@ -27,7 +27,7 @@ function NavBar() {
         {/* Cart */}
         <div className="navbar-right">
           <Link to="/orders" className="navbar-orders">
-            Mis Compras
+            Mis compras
           </Link>
           <div className="navbar-cart">
             <Link to='/cart'><CartWidget /></Link>

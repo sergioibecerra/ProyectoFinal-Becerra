@@ -21,7 +21,7 @@ function OrderListContainer() {
       <div className='section-container'>
         {/* Header */}
         <div className='section-header'>
-          <p className='section-title'>Mis Compras</p>
+          <p className='section-title'>Mis compras</p>
           {loading 
             ? <p>Cargando...</p> 
             : !dataMessage 
