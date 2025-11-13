@@ -7,6 +7,26 @@
 Freemium y compras dentro de la aplicación.<br>
 Contacto comercial: Sergio Becerra, 351 595-1004.
 
+## Instalación
+Instruciones para instalar y configurar el proyecto en forma local.
+
+```bash
+git clone https://github.com/sergioibecerra/ProyectoFinal-Becerra.git entrega-3
+cd entrega-3
+npm install
+```
+
+Para la ejecución local, desde la carpeta del proyecto, ejecutar:
+```bash
+npm run dev
+```
+
+Dependencias utilizadas:
+- firebase      ver 12.4.0
+- react         ver 19.1.1
+- react-dom     ver 19.1.1
+- react-router  ver 7.9.5
+
 ## Características
 
 - Fácil de instalar.
