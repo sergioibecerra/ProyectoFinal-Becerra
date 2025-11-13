@@ -41,8 +41,14 @@ function CartContainer() {
 
   if(orderCreated){
     return <section>
-      <h2>Gracias por su compra!</h2>
-      <p>Este es el ID de la orden de compra: #{orderCreated}</p>
+      <div className='section-container'>
+        <p className='section-title'>Gracias por su compra!</p>
+        <div className='order-created-message'>
+          <p style={{marginBottom: '0.5rem'}}>Su orden fue enviada con éxito.</p>
+          <p>Para hacer un seguimiento de su compra utilice el</p>
+          <p style={{marginBottom: '0.5rem'}}>siguiente número: <b>#{orderCreated}</b></p>
+        </div>
+      </div>
     </section>
   }
 

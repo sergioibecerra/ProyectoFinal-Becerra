@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { collection, getFirestore, getDocs, query, where, addDoc, doc, getDoc } from "firebase/firestore";
+import { collection, getFirestore, getDocs, query, where, addDoc, doc, getDoc, orderBy } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { items } from "../data/data";
@@ -84,7 +84,8 @@ export async function createBuyOrder(orderData) {
 
 export async function getAllBuyOrders() {
   const ordersRef = collection(db, "orders");
-  const querySnapshot = await getDocs(ordersRef);
+  const q = query(ordersRef, orderBy("date", "desc"));
+  const querySnapshot = await getDocs(q);
   const data = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
   return data;
 }

@@ -16,8 +16,6 @@ function OrderListContainer() {
       finally(() => setLoading(false))
   }, [])
 
-  // <p>85 compras por un total de $375.000,00</p>
-
   return (
     <section>
       <div className='section-container'>
@@ -26,18 +24,22 @@ function OrderListContainer() {
           <p className='section-title'>Mis Compras</p>
           {loading 
             ? <p>Cargando...</p> 
-            : <p>{orders.length} compras por un total de ${orders.reduce((total, order) => total + order.total, 0).
-                toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+            : !dataMessage 
+              ? <p>{orders.length} compras por un total de ${orders.reduce((total, order) => total + order.total, 0).
+                  toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+              : <p>{dataMessage}</p>
           }
         </div>
               
-        {/* Body */}
-        {orders.map(order => (<OrderList key={order.id} {...order} />))}
+        {/* List */}
+        {!dataMessage && orders.map(order => (<OrderList key={order.id} {...order} />))}
 
         {/* Footer */}
-        <div className='section-footer'>
-          <button className='section-button' disabled={true}>Eliminar historial</button>
-        </div>
+        {!dataMessage && 
+          <div className='section-footer'>
+            <button className='section-button' disabled={true}>Eliminar historial</button>
+          </div>
+        }
       </div>
     </section>
   )

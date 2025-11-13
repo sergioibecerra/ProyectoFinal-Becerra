@@ -1,0 +1,12 @@
+.order-created-message {
+  width: fit-content;
+  font-size: 1rem;
+  padding: 2rem;
+  background-color: #FFF3E0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);    /* Sombra suave */
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
